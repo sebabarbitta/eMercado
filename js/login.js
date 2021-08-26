@@ -7,9 +7,16 @@ function control(){
         alert("Porfavor ingrese, nombre de usuario y contraseña correctos."); 
         } 
         else{ 
+                    
+            var usu =  document.getElementById("usu").value;
+            window.localStorage.setItem("Usuario",usu);
             document.form.submit(); 
-            window.location.href= "inicio.html";
-        } 
+           
+           window.location.href= "inicio.html";
+         
+          
+        }  
+      
 
     } 
    
