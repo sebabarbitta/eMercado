@@ -29,18 +29,19 @@
       <h2>Productos</h2>
       <p class="lead">Verás aquí todos los Productos del sitio.</p>
   </div>
-  <input type="search" id="buscador">
-
+  <div class="col text-center">
+  <input class="btn btn-light" type="search" id="buscador" placeholder="BUSCADOR" >
+</div>
     <!--Campos (todos) min / max -->
   <div class="container">
     <div class="row">
         <div class="col text-right">
             <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
                 <label class="btn btn-light active" id="ordenmax" >
-                    <input type="radio" name="precio" autocomplete="off" checked>$Max-$Min
+                    <input type="radio" name="precio" autocomplete="off" checked>$Min-$Max
                 </label>
                 <label class="btn btn-light" id="ordenmin" >
-                    <input type="radio" name="precio" autocomplete="off">$Min-$Max
+                    <input type="radio" name="precio" autocomplete="off">$Max-$Min
                 </label>
                 <label class="btn btn-light" id="ordenrel" >
                     <input type="radio" name="precio" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>Relev.
