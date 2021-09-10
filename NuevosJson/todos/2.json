@@ -1,4 +1,4 @@
-[
+
 
 {   "id" : 2,
     "name": "Fiat Way",
@@ -13,4 +13,3 @@
     ],
     "relatedProducts":[2, 5]
 }
-]

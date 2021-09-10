@@ -1,4 +1,4 @@
-[
+
     {    "id" : 4,
         "name": "Peugeot 208",
         "description": "El modelo de auto que se sigue renovando y manteniendo su prestigio en comodidad.",
@@ -11,4 +11,3 @@
         ],
         "relatedProducts":[ 1, 2]
     }
-]

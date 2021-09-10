@@ -1,4 +1,4 @@
-[
+
     {    "id" : 5,
         "name": "Xiaomi Redmi 9",
         "description": "móvil de gama media que busca competir en precio con una configuración más ajustada que la de la familia Redmi Note 9. ",
@@ -11,4 +11,3 @@
         ],
         "relatedProducts":[ 3 , 6]
     }
-]

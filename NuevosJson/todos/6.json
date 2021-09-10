@@ -1,4 +1,4 @@
-[
+
 {    "id" : 6,
     "name": "Samsung Galaxy A20",
     "description": "el teléfono se mantiene en la línea económica, alejado de otros pesos pesados de la gama como los Galaxy A60, A70 y compañía. El nuevo modelo ya está entre nosotros y aunque el fabricante no ha deslizado todas sus características, sí nos permite construir el esqueleto del nuevo dispositivo pese a las pequeñas lagunas que nos encontramos",
@@ -12,4 +12,3 @@
     "relatedProducts":[ 2 , 4]
    
 }
-]
