@@ -30,5 +30,37 @@
         "currency": "USD",
         "imgSrc": "img/prod4.jpg",
         "soldCount": 17
+    },
+    {    "id" : 5,
+        "name": "Xiaomi Redmi 9",
+        "description": "la súper batería y sus cuatro cámaras ",
+        "cost": 200,
+        "currency": "USD",
+        "imgSrc": "img/prod5.jpg",
+        "soldCount": 20
+    },
+    {    "id" : 6,
+        "name": "Samsung Galaxy A20",
+        "description": "más potente que el A10, menos que el resto de sus hermanos",
+        "cost": 300,
+        "currency": "USD",
+        "imgSrc": "img/prod6.jpg",
+        "soldCount": 10
+    },
+    {    "id" : 7,
+        "name": "Huawei P40",
+        "description": "",
+        "cost": 290,
+        "currency": "USD",
+        "imgSrc": "img/prod7.jpg",
+        "soldCount": 25
+    },
+    {    "id" : 8,
+        "name": "Motorola Moto G20",
+        "description": "",
+        "cost": 400,
+        "currency": "USD",
+        "imgSrc": "img/prod8.jpg",
+        "soldCount": 7
     }
 ]
