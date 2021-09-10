@@ -39,6 +39,11 @@ function ordenarPrecios(criteria, array){
     return result;
 } 
   
+function mostrar(id) {
+    window.localStorage.setItem('produc', id);
+    window.location = 'product-info.html';
+    
+}
 
 function productos(){
 
@@ -60,19 +65,22 @@ function productos(){
             //if((buscar == "") || ( descrip.name.toLowerCase().indexOf(buscar) != -1)){  
              if  ( descrip.name.toLowerCase().indexOf(buscar) !== -1)   {
         contenido += `
-        <a href="product-info.html" class="list-group-item list-group-item-action">
        
-        <div class="productos" >
+        <div class="list-group-item list-group-item-action" >
         <img src="` + descrip.imgSrc + `" alt="` + descrip.description + `width="100px" height="100px" " class="img-productos">
+        <small class="text-muted"> <button onclick= mostrar(`+ descrip.id +`) type= "button"> Info Producto </button> </small> 
                 <div class="col">
+
                 <div class="d-flex w-100 justify-content-between">
+                
                     <h4 class="mb-1">`+ descrip.name +`</h4>
-                    <small class="text-muted"> Costo: `+descrip.currency+` ` + descrip.cost + ` </small>
+                    
+                    <small class="text-muted"> Costo: `+descrip.currency+'' + descrip.cost + ` </small>
                 </div>
                 <p class="mb-1">` + descrip.description + `</p>
             </div>
         </div>
-        </a>
+        
     `
 }
 }

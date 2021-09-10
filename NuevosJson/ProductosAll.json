@@ -58,7 +58,7 @@
     {    "id" : 8,
         "name": "Motorola Moto G20",
         "description": "",
-        "cost": 400,
+        "cost": 100,
         "currency": "USD",
         "imgSrc": "img/prod8.jpg",
         "soldCount": 7
