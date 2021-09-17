@@ -3,6 +3,7 @@
 //elementos HTML presentes.
 var id = window.localStorage.getItem('produc');
 var librosArray =[];
+var coment =[];
 
 function mostrarproduct(descrip) {
   //  let contenido = "";
@@ -23,11 +24,9 @@ function mostrarproduct(descrip) {
     
 
 document.addEventListener("DOMContentLoaded", function(e){
-    getJSONData(PRODUCT_INFO_URL + id + ".json").then(function (resultObj) {
+   getJSONData(PRODUCT_INFO_URL + id + ".json" ).then(function (resultObj) {
         if (resultObj.status === "ok") {
             librosArray = resultObj.data;
-
-            category = resultObj.data;
 
             let artNameHTML  = document.getElementById("Nombreart");
             let artDescriptionHTML = document.getElementById("Descriart");
@@ -38,13 +37,35 @@ document.addEventListener("DOMContentLoaded", function(e){
             artDescriptionHTML.innerHTML = librosArray.description;
             artcosto.innerHTML += librosArray.currency
             artcosto.innerHTML += librosArray.cost;
-  
+          }
   //          mostrarproduct(librosArray);
         }
-    });
-
-
+    
+)
 });
- 
+      
+
+document.addEventListener("DOMContentLoaded", function(e){
+  getJSONData(PRODUCT_INFO_COMMENTS_URL).then(function (resultObj) {
+      if (resultObj.status === "ok") {
+          
+          coment = resultObj.data;
+
+         
+          let comentdescrip = document.getElementById("descrcoment");
+          let comentpuntua = document.getElementById("descrpuntua");
+         // let productCriteriaHTML = document.getElementById("productCriteria");
+      
+         comentdescrip.innerHTML = coment.description;
+         comentpuntua.innerHTML = coment.score;
+
+//          mostrarproduct(librosArray);
+      }
+  });
+});
+
+
+
+
  
 

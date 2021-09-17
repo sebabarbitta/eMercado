@@ -68,7 +68,7 @@ function productos(){
        
         <div class="list-group-item list-group-item-action" >
         <img src="` + descrip.imgSrc + `" alt="` + descrip.description + `width="100px" height="100px" " class="img-productos">
-        <small class="text-muted"> <button onclick= mostrar(`+ descrip.id +`) type= "button"> Info Producto </button> </small> 
+        <small class="text-muted"> <button onclick= mostrar(`+ descrip.id +`) class="btn btn-info btn-sm" type= "button"> Info Producto </button> </small> 
                 <div class="col">
 
                 <div class="d-flex w-100 justify-content-between">
