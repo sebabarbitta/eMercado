@@ -10,6 +10,7 @@
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
@@ -55,7 +56,7 @@
           <dt>Imágenes ilustrativas</dt>
           <dd>       
       <!--      <div class="row text-left text-xl-left pt-2" id="productImagesGallery">-->
-        <div class="text-center" id="verimagen"></div>
+        <div class="row text-left text-xl-left pt-2" id="verimagen"></div>
             </div>
           </dd>     
            <br>
@@ -67,7 +68,9 @@
   
           <dt>Puntuación</dt>
           <dd>
-            <p id="descrpuntua"></p>
+            <p id="descrpuntua">
+  
+            </p>
           </dd>       
           </dl>
       </div>
@@ -75,12 +78,12 @@
       <hr class="my-3">
       <div> 
         <p>Comentario:
-        <textarea  name="comentarios" cols="60" rows="5"></textarea></p>
+        <textarea  id="comentarios" cols="60" rows="5"></textarea></p>
          
         
         
           <p>Puntuación:
-            <div class="star-rating">
+            <div id="puntua" class="star-rating">
           <input id="star-5" type="radio" name="rating" value="5"  />
           <label for="star-5" title="5 stars">
             <i class="active fa fa-star"></i>
@@ -107,7 +110,7 @@
           </label>
         
         </div>
-        <button id="agregar" type="submit">Enviar</button>
+        <button id="agregar" onclick=agregar()>Enviar</button>
           </p>
       </div>
    

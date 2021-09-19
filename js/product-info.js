@@ -2,20 +2,21 @@
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 var id = window.localStorage.getItem('produc');
-var librosArray =[];
+var librosArray ={};
 var coment =[];
-
+var imagen = [];
 
 function imagenes(img){
   let verimg = "";
+  
 
     for(let i = 0; i < img.length; i++){
-        let imagen = img[i];
+       let  imagen = img[i];
 
         verimg += `
         <div class="col-lg-3 col-md-4 col-6">
             <div class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src=";` + imagen + `"width="100px" height="100px alt=">
+                <img class="img-fluid img-thumbnail" src="`+imagen+`"width="200px" height="200px">
             </div>
         </div>
         `
@@ -24,6 +25,79 @@ function imagenes(img){
     }
 }
 
+function estrellas(estre){
+  let comentpuntua = "";
+
+  
+  if (estre === 1){
+    comentpuntua=
+   `<span class="fa fa-star checked"></span>`+
+   `<span class="fa fa-star"></span>`+
+   `<span class="fa fa-star"></span>`+
+   `<span class="fa fa-star"></span>`+
+   `<span class="fa fa-star"></span>`
+  }
+  if (estre === 2){
+    comentpuntua=
+   `<span class="fa fa-star checked"></span>`+
+   `<span class="fa fa-star checked"></span>`+
+   `<span class="fa fa-star"></span>`+
+   `<span class="fa fa-star"></span>`+
+   `<span class="fa fa-star"></span>`
+  }
+  if(estre === 3){
+    comentpuntua=
+    `<span class="fa fa-star checked"></span>`+
+    `<span class="fa fa-star checked"></span>`+
+    `<span class="fa fa-star checked"></span>`+
+    `<span class="fa fa-star"></span>`+
+    `<span class="fa fa-star"></span>`
+
+  }
+  if(estre === 4){
+    comentpuntua=
+    `<span class="fa fa-star checked"></span>`+
+    `<span class="fa fa-star checked"></span>`+
+    `<span class="fa fa-star checked"></span>`+
+    `<span class="fa fa-star checked"></span>`+
+    `<span class="fa fa-star"></span>`
+  }
+  if(estre === 5){
+    comentpuntua=
+    `<span class="fa fa-star checked"></span>`+
+    `<span class="fa fa-star checked"></span>`+
+    `<span class="fa fa-star checked"></span>`+
+    `<span class="fa fa-star checked"></span>`+
+    `<span class="fa fa-star checked"></span>`
+  }
+
+
+document.getElementById("descrpuntua").innerHTML = comentpuntua;
+  
+}
+
+function agregar(){
+  let coment = document.getElementById("comentarios").value;
+
+  
+  let agregoC = "";
+ 
+  
+  agregoC += `
+       
+  <div class="list-group-item list-group-item-action" > 
+          <div class="col">
+          <p class="mb-1"> Nuevo Comentario: ` + coment + `</p> 
+ 
+      </div>
+  </div>
+  
+`
+
+document.getElementById("descrcoment").innerHTML += agregoC;
+
+
+}
 document.addEventListener("DOMContentLoaded", function(e){
    getJSONData(PRODUCT_INFO_URL + id + ".json" ).then(function (resultObj) {
         if (resultObj.status === "ok") {
@@ -42,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function(e){
             artcosto.innerHTML += librosArray.currency
             artcosto.innerHTML += librosArray.cost;
          //   img.innerHTML += '<img src="'+src+'"width="100px" height="100px">';
-         imagenes(librosArray.images)
+         imagenes(librosArray.images);
           }
   //      
         }
@@ -56,20 +130,23 @@ document.addEventListener("DOMContentLoaded", function(e){
       if (resultObj.status === "ok") {
           
           coment = resultObj.data;
-          estrella= coment.score;
+         
          
           let comentdescrip = document.getElementById("descrcoment");
-          let comentpuntua = document.getElementById("descrpuntua");
+          
          
       
          comentdescrip.innerHTML = coment.description;
        
-       if(estrella == 1){
+     /*  if(estrella == 1){
        1 =  
         '<span class="fa fa-star checked"></span>'
       }
+      
+         let comentpuntua = document.getElementById("descrpuntua")
          comentpuntua.innerHTML = coment.score;
-
+*/
+         estrellas(coment.score);
 
       }
   });
