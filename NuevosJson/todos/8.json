@@ -8,7 +8,10 @@
     "soldCount": 7,
     "category": "Celulares",
     "images":[
-        "img/prod8.jpg"
+        "img/prod8.jpg",
+        "img/prod8_1.png",
+        "img/prod8_2.png",
+        "img/prod8_3.jpg"
     ],
     "relatedProducts":[ 3 , 5]
 }
