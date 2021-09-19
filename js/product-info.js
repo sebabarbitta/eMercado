@@ -103,8 +103,7 @@ document.addEventListener("DOMContentLoaded", function(e){
         if (resultObj.status === "ok") {
             librosArray = resultObj.data;
 
-         //   let src = "img/prod"+librosArray.id+ ".jpg"
-          //  let img = document.getElementById("verimagen");
+      
             let artNameHTML  = document.getElementById("Nombreart");
             let artDescriptionHTML = document.getElementById("Descriart");
             let artcosto = document.getElementById("Costoart");
@@ -115,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function(e){
             artDescriptionHTML.innerHTML = librosArray.description;
             artcosto.innerHTML += librosArray.currency
             artcosto.innerHTML += librosArray.cost;
-         //   img.innerHTML += '<img src="'+src+'"width="100px" height="100px">';
+      
          imagenes(librosArray.images);
           }
   //      
@@ -132,20 +131,9 @@ document.addEventListener("DOMContentLoaded", function(e){
           coment = resultObj.data;
          
          
-          let comentdescrip = document.getElementById("descrcoment");
-          
-         
-      
+          let comentdescrip = document.getElementById("descrcoment");    
          comentdescrip.innerHTML = coment.description;
        
-     /*  if(estrella == 1){
-       1 =  
-        '<span class="fa fa-star checked"></span>'
-      }
-      
-         let comentpuntua = document.getElementById("descrpuntua")
-         comentpuntua.innerHTML = coment.score;
-*/
          estrellas(coment.score);
 
       }
