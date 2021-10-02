@@ -2,7 +2,9 @@
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 var id = window.localStorage.getItem('produc');
+
 var librosArray ={};
+var todosart={};
 var coment =[];
 var imagen = [];
 
@@ -11,18 +13,33 @@ function imagenes(img){
   
 
     for(let i = 0; i < img.length; i++){
-       let  imagen = img[i];
+      // let  imagen = img[i];
 
-        verimg += `
-        <div class="col-lg-3 col-md-4 col-6">
-            <div class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="`+imagen+`"width="200px" height="200px">
-            </div>
-        </div>
+        verimg = `
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+  <div class="carousel-item active">
+  <img src="`+img[0]+`" class="d-block w-20" height="300px">
+</div>
+    <div class="carousel-item">
+    <img src="`+img[1]+`" class="d-block w-20" height="200px">
+  </div>
+  <div class="carousel-item" >
+    <img src="`+img[2]+`" class="d-block w-20" height="200px">
+  </div>
+  <div class="carousel-item" >
+    <img src="`+img[3]+`" class="d-block w-20" height="200px">
+  </div>
+
+   
+    
+  </div>
+</div>
         `
 
-        document.getElementById("verimagen").innerHTML = verimg;
+        
     }
+    document.getElementById("verimagen").innerHTML = verimg;
 }
 
 function estrellas(estre){
@@ -98,8 +115,51 @@ document.getElementById("descrcoment").innerHTML += agregoC;
 
 
 }
+
+function prodrel(rel){
+  let prod = "";
+
+
+   for(let i = 0; i < rel.length; i++){
+       let relacionados = rel[i];
+       
+       
+              prod += `
+              
+              <div class="list-group-item list-group-item-action" >
+              <img src="` + todosart[relacionados].imgSrc + `" width="100px" height="100px" class="img-productos">
+      
+       <div class="list-group-item list-group-item-action" >
+      
+               <div class="col">
+
+               <div class="d-flex w-100 justify-content-between">
+               
+                   <h4 class="mb-1">`+ todosart[relacionados].name +`</h4>
+                   
+                   <small class="text-muted"> Costo: `+todosart[relacionados].currency+'' + todosart[relacionados].cost + ` </small>
+               </div>
+               <p class="mb-1">` + todosart[relacionados].description + `</p>
+               
+               </div>
+           </div>
+       </div>
+       
+   `
+
+
+
+
+   }
+       
+       document.getElementById("rela").innerHTML = prod;
+       
+            }
+  
+
+
 document.addEventListener("DOMContentLoaded", function(e){
-   getJSONData(PRODUCT_INFO_URL + id + ".json" ).then(function (resultObj) {
+   getJSONData(PRODUCT_INFO_URL + id + ".json"  ).then(function (resultObj) {
         if (resultObj.status === "ok") {
             librosArray = resultObj.data;
 
@@ -116,11 +176,23 @@ document.addEventListener("DOMContentLoaded", function(e){
             artcosto.innerHTML += librosArray.cost;
       
          imagenes(librosArray.images);
+        
           }
+
+          getJSONData(PRODUCTS_URL) .then (function(resultado) {
+            if (resultObj.status === "ok"){
+              todosart = resultado.data;
+       
+               //productos(arrayproduct);
+             prodrel(librosArray.relatedProducts);
+            
+            }
+      
   //      
         }
     
 )
+})
 });
       
 
@@ -139,9 +211,3 @@ document.addEventListener("DOMContentLoaded", function(e){
       }
   });
 });
-
-
-
-
- 
-

@@ -24,8 +24,18 @@
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-      <a class="py-2 d-none d-md-inline-block" id="usuario" href="#">Usuario: </a>
+      <div class="dropdown">
+        <a class="btn btn-secondary dropdown-toggle" onclick="localStorage.clear();" href="#" role="button" id="usuario" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Usuario: </a>      
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <a class="dropdown-item" href="cart.html">Mi Carrito</a>
+          <a class="dropdown-item" href="my-profile.html">Mi Perfil</a>
+          <a class="dropdown-item" href="index.html">Cerrar sesión</a>
+        </div>
+      </div>
     </div>
+    
+  
   </nav>
   <div class="text-center p-4">
   
@@ -56,7 +66,7 @@
           <dt>Imágenes ilustrativas</dt>
           <dd>       
       <!--      <div class="row text-left text-xl-left pt-2" id="productImagesGallery">-->
-        <div class="row text-left text-xl-left pt-2" id="verimagen"></div>
+        <div  id="verimagen"></div>
             </div>
           </dd>     
            <br>
@@ -114,7 +124,11 @@
           </p>
       </div>
    
-  
+  <div class="text-center">
+ <h3>Productos Relacionados</h3>
+ <p id="rela"></p>
+
+  </div>
   <footer class="text-muted">
     <div class="container">
       <p class="float-right">
