@@ -13,7 +13,7 @@ function imagenes(img){
   
 
     for(let i = 0; i < img.length; i++){
-       let  imagen = img[i];
+    //   let  imagen = img[i];
 
         verimg = `
       
