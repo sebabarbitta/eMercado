@@ -42,9 +42,10 @@
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
       <div class="dropdown">
-        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="usuario" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Usuario: </a>      
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="usuario" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Usuario: </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
           <a class="dropdown-item" href="cart.html">Mi Carrito</a>
           <a class="dropdown-item" href="my-profile.html">Mi Perfil</a>
           <a class="dropdown-item" onclick="localStorage.clear()" href="index.html">Cerrar sesión</a>
@@ -52,14 +53,94 @@
       </div>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 5 (Fecha de entrega: 17/10/2021) y Entrega 7 (Fecha de entrega: 14/11/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
-    </div>
+  <div class="text-center p-4">
+    <h1>Productos del Carrito</h1>
+    <p class="lead">Verás aquí todos los Productos del carrito.</p>
   </div>
+
+  <!-- <div class="container p-5">
+    <div class="list-group-item list-group-item-action" >
+      <div class="d-flex w-100 justify-content-between">-->
+  <div id="car"> </div>
+
+  <div id="envio" class="mb-1 text-center p-4">
+    <h3> Metodo de envio</h3>
+    <p>
+    <h5> Direccion</h5> <br>
+    Calle: <input type="text" name="calle" placeholder="Introduzca su calle">
+    Esquina: <input type="text" name="esquina" placeholder="Introduzca su esquina">
+    Numero: <input type="number" name="nro" placeholder=" Nro de puerta">
+    </p>
+    <p>
+      Pais: <input type="text" name="pais" placeholder="Pais">
+    </p>
+
+  
+    <h5> Tipo de envio</h5>
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text">
+          <input id="premium" aria-label="Radio button for following text input" type="radio" name="envio" value="1"
+            checked="" required="">
+          <label for="premium"> Premium(2-5 dias)</label>
+        </div>
+        <div class="input-group-text">
+          <input id="express" aria-label="Radio button for following text input" type="radio" name="envio" value="2">
+          <label for="express"> Express(5-8 dias) </label>
+        </div>
+        <div class="input-group-text">
+          <input id="standard" aria-label="Radio button for following text input" type="radio" name="envio" value="3">
+          <label for="standard"> Standard(12 a 15 dias)</label>
+                  
+        </div>
+      </div>
+    </div>
+   <h5> Forma de Pago</h5>
+   <div class="accordion" id="accordionExample">
+    <div class="card">
+      <div class="card-header" id="headingOne">
+        <h2 class="mb-0">
+          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Tranferencia Bancaria
+          </button>
+        </h2>
+      </div>
+  
+      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+        <div class="card-body">
+       Banco:  <input type="text">
+       Cuenta  <input type="number">
+       <button type="button" class="btn btn-primary">Pagar</button>
+      </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" id="headingTwo">
+        <h2 class="mb-0">
+          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Tarjeta de Credito
+          </button>
+        </h2>
+      </div>
+      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+        <div class="card-body">
+          Banco: <input type="text">
+          Nro Tarjeta: <input type="number">
+          Vencimiento: <input type="number">
+          Codigo Seguridad: <input type="number">
+          <br>
+          <button type="button" class="btn btn-primary">Pagar</button>
+        </div>   
+      </div>
+    </div>
+   </div>
+  </div>
+
+
+  <!--      <p id="car" class="mb-1"><p>
+        </div>
+      </div>
+  </div>-->
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
@@ -68,6 +149,7 @@
       <div></div>
     </div>
   </div>
+
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/dropzone.js"></script>
