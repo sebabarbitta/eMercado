@@ -48,44 +48,51 @@ function mostrar(id) {
 function productos(){
 
     let contenido = "";
-   const  buscar = document.getElementById("buscador").value.toLowerCase();
- //   if (buscar !=""){
-   /* document.getElementById("buscador").addEventListener('input',function(){
-        
-        const  buscar = document.getElementById("buscador").value.toLowerCase();
-        productos()
-
-        })*/
-
-    for(let i = 0; i < info.length; i++){
-        let descrip = info[i];
+    const  buscar = document.getElementById("buscador").value.toLowerCase();
+  //   if (buscar !=""){
+    /* document.getElementById("buscador").addEventListener('input',function(){
          
-        if (((minCost == undefined) || (minCost != undefined && parseInt(descrip.cost) >= minCost)) &&
-        ((maxCost == undefined) || (maxCost!= undefined && parseInt(descrip.cost) <= maxCost))){
-            //if((buscar == "") || ( descrip.name.toLowerCase().indexOf(buscar) != -1)){  
-             if  ( descrip.name.toLowerCase().indexOf(buscar) !== -1)   {
-        contenido += `
-       
-        <div class="list-group-item list-group-item-action" >
-        <img src="` + descrip.imgSrc + `" alt="` + descrip.description + `width="100px" height="100px" " class="img-productos">
-        <small class="text-muted"> <button onclick= mostrar(`+ descrip.id +`) class="btn btn-info btn-sm" type= "button"> Info Producto </button> </small> 
-                <div class="col">
+         const  buscar = document.getElementById("buscador").value.toLowerCase();
+         productos()
+         })*/
+ 
+     for(let i = 0; i < info.length; i++){
+         let descrip = info[i];
+          
+         if (((minCost == undefined) || (minCost != undefined && parseInt(descrip.cost) >= minCost)) &&
+         ((maxCost == undefined) || (maxCost!= undefined && parseInt(descrip.cost) <= maxCost))){
+             //if((buscar == "") || ( descrip.name.toLowerCase().indexOf(buscar) != -1)){  
+              if  ( descrip.name.toLowerCase().indexOf(buscar) !== -1)   {
 
-                <div class="d-flex w-100 justify-content-between">
+         contenido += ` 
+        
+         <div class="col-lg-3 col-md-4 col-sm-6">
+         <div class="card mb-4 shadow-sm custom-card">
+         
+         <img src="` + descrip.imgSrc + `" alt="` + descrip.description + `width="100px" height="100px" " class="bd-placeholder-img card-img-top">
+        <small class="text-muted"> <button onclick= mostrar(`+ descrip.id +`) class="btn btn-info btn-sm" type= "button"> Info Producto </button> </small> 
                 
-                    <h4 class="mb-1">`+ descrip.name +`</h4>
+                
+        
+                    <h4 class="m-3">`+ descrip.name +`</h4>
+                    <div class="card-body">
+                    <p><small class="card-text"> Costo: `+descrip.currency+'' + descrip.cost + ` </small><p>
+                
+                    <p class="card-text">` + descrip.description + `</p>
                     
-                    <small class="text-muted"> Costo: `+descrip.currency+'' + descrip.cost + ` </small>
+              
+              
                 </div>
-                <p class="mb-1">` + descrip.description + `</p>
-            </div>
-        </div>
+                </div>
+                </div>
+       
+       
         
     `
 }
 }
-        document.getElementById("prod").innerHTML = contenido;
-    
+        document.getElementById("prod").innerHTML   = contenido;
+   
 } 
     
 }
