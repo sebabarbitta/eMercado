@@ -63,18 +63,47 @@
       <div class="d-flex w-100 justify-content-between">-->
   <div id="car"> </div>
 
-  <div id="envio" class="mb-1 text-center p-4">
-    <h3> Metodo de envio</h3>
-    <p>
-    <h5> Direccion</h5> <br>
-    Calle: <input type="text" name="calle" placeholder="Introduzca su calle">
-    Esquina: <input type="text" name="esquina" placeholder="Introduzca su esquina">
-    Numero: <input type="number" name="nro" placeholder=" Nro de puerta">
-    </p>
-    <p>
-      Pais: <input type="text" name="pais" placeholder="Pais">
-    </p>
+  <div id="envio" class="mb-1 text-center p-4"></div>
 
+      <div class="text-center p-4">
+        <h3>DATOS ENVIO</h3>
+       </div>   
+       <form class="needs-validation" novalidate>
+        <div class="form-row">
+    <p>   
+       <div class="col-md-4 mb-3">
+      <label for="Calle">Calle</label>
+      <input type="text" class="form-control formuIn" id="Calle" placeholder="Calle"  required>
+      <div class="invalid-feedback">
+        Ingrese una Calle valida
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="Esquina">Esquina</label>
+      <input type="text" class="form-control formuIn" id="Esquina" placeholder="Esquina" required>
+      <div class="invalid-feedback">
+        Ingrese una Esquina valida
+      </div>
+    </div>
+
+    <div class="col-md-4 mb-3">
+      <label for="Numero">Numero</label>
+      <input type="number" class="form-control formuIn" id="Numero" placeholder="Numero"  required>
+      <div class="invalid-feedback">
+        Ingrese un Nro de puerta valido
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="Pais">Pais</label>
+      <input type="text" class="form-control formuIn" id="Pais" placeholder="Pais"  required>
+      <div class="invalid-feedback">
+        Ingrese un Pais valido
+      </div>
+    </div>
+
+  </p>
+</div>
+  </div>
   
     <h5> Tipo de envio</h5>
     <div class="input-group">
@@ -85,56 +114,154 @@
           <label for="premium"> Premium(2-5 dias)</label>
         </div>
         <div class="input-group-text">
-          <input id="express" aria-label="Radio button for following text input" type="radio" name="envio" value="2">
+          <input id="express" aria-label="Radio button for following text input" type="radio" name="envio"  value="2">
           <label for="express"> Express(5-8 dias) </label>
         </div>
         <div class="input-group-text">
-          <input id="standard" aria-label="Radio button for following text input" type="radio" name="envio" value="3">
+          <input id="standard" aria-label="Radio button for following text input" type="radio"  name="envio" value="3">
           <label for="standard"> Standard(12 a 15 dias)</label>
                   
         </div>
       </div>
     </div>
-   <h5> Forma de Pago</h5>
-   <div class="accordion" id="accordionExample">
-    <div class="card">
-      <div class="card-header" id="headingOne">
-        <h2 class="mb-0">
-          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-            Tranferencia Bancaria
-          </button>
-        </h2>
-      </div>
-  
-      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-        <div class="card-body">
-       Banco:  <input type="text">
-       Cuenta  <input type="number">
-       <button type="button" class="btn btn-primary">Pagar</button>
-      </div>
-      </div>
+    <div>
+     <h3> Totales </h3>
+    <p> SubTotal UYU: <span id="Subtotal">  </span></p>
+    <p> Envio: <span id="totalEnvio"> </span></p>
+    <p> Total: <span id="total"> </span></p>
     </div>
-    <div class="card">
-      <div class="card-header" id="headingTwo">
-        <h2 class="mb-0">
-          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-            Tarjeta de Credito
-          </button>
-        </h2>
+
+    <!-- Button trigger modal -->
+    <div id="checkout" class="row bg-check p-3">
+      <div class="col-lg-8 mb-5">
+        <form id="ship-validate" novalidate>
+
+      <div class="col-12 text-center">
+        <div id="invalid-msg" class="invalid-msg d-none">
+          <p>Debe completar un método de pago</p>
+        </div>
+        <button class="btn btn-success sombra" type="button" data-toggle="modal" data-target="#exampleModalCenter"
+          style="width: 390px;">Método de pago</button>
       </div>
-      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-        <div class="card-body">
-          Banco: <input type="text">
-          Nro Tarjeta: <input type="number">
-          Vencimiento: <input type="number">
-          Codigo Seguridad: <input type="number">
-          <br>
-          <button type="button" class="btn btn-primary">Pagar</button>
-        </div>   
+      <div class="col-12 text-center">
+        <button id="asd" class="btn btn-primary sombra" type="submit" style="width: 390px;" >Confirmar compra</button>
       </div>
+    <!--  </form>-->
     </div>
-   </div>
   </div>
+
+<!-- Modal -->
+ <!-- <form class="needs-validati" novalidate> -->
+  <div class="form-row">
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalScrollableTitle">Metodo de pago</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="accordion" id="accordionExample">
+          <div class="card">
+            <div class="card-header" id="headingOne">
+              <h2 class="mb-0">
+                <div class="btn-group mr-5" id="show-bank" role="group" aria-label="Second group">
+                <button class="btn btn-info" type="button" onclick="validateBank()" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                  Tranferencia Bancaria
+                </button>
+                </div>
+              </h2>
+            </div>
+            <div id="Info-banco">
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+              <div class="card-body">
+            
+             <div class="col-md-4 mb-3">
+              <label for="Banco">Banco</label>
+              <input type="text" class="form-control formuOut" id="banco-banco"  style="width: 200px" placeholder="Banco"  required>
+              <div class="invalid-feedback">
+                Ingrese un Banco valido
+              </div>
+            </div>
+
+            <div class="col-md-4 mb-3">  
+             <label for="Cuenta">Cuenta</label>
+              <input type="number" class="form-control formuOut" id="banco-cta" style="width: 200px" placeholder="Cuenta"  required>
+              <div class="invalid-feedback">
+                Ingrese un Banco valido1
+              </div>
+            </div>
+             
+            <br>
+            </div>
+            </div>
+          </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header" id="headingTwo">
+              <h2 class="mb-0">
+                <div class="btn-group mr-5" id="show-bank" role="group" aria-label="Second group">
+                <button class="btn btn-info" type="button" onclick="validateCard()" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Tarjeta de Credito
+                </button>
+              </div>
+              </h2>
+            </div>
+            <div id="Info-tarjeta">
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+              <div class="card-body">
+                <div class="col-md-4 mb-3">
+              <label for="Bancocta">Nombre Banco</label>
+              <input type="text" class="form-control formuOut" id="tarjeta-tarjeta" style="width: 200px" placeholder="Nombre Banco"  required>
+              <div class="invalid-feedback">
+                Ingrese un Banco valido
+              </div>
+             </div>
+
+             <div class="col-md-4 mb-3">
+             <label for="nro-tarjeta">Nro Tarjeta</label>
+             <input type="number" class="form-control formuOut" id="nro-tarjeta" style="width: 200px" placeholder="Nombre Banco"  required>
+             <div class="invalid-feedback">
+               Ingrese una tarjeta
+             </div>
+            </div>
+            <div class="col-md-4 mb-3">
+            <label for="vto">Vencimiento</label>
+            <input type="number" class="form-control formuOut" id="vto-tarjeta" style="width: 200px" placeholder="Vto"  required>
+            <div class="invalid-feedback">
+              Ingrese una Vencimiento
+            </div>
+           </div>
+           <div class="col-md-4 mb-3">
+           <label for="cdo/Seguridad">Codigo Seguridad</label>
+           <input type="number" class="form-control formuOut" id="codigoseg-tarjeta" style="width: 200px" placeholder="CodigoSeguridad"  required>
+           <div class="invalid-feedback">
+             Ingrese una Vencimiento
+           </div>
+          </div>
+               
+              </div>     
+              </div>   
+            </div>
+          </div>
+         </div>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="submit" class="btn btn-primary" aria-label="Close" data-dismiss="modal">Pagar</button>
+      
+      </div>
+      
+    </div>
+  </div>
+</div> </div> </form>
+
+<!-- Parte Final-->    
+  
+  
 
 
   <!--      <p id="car" class="mb-1"><p>
@@ -149,6 +276,26 @@
       <div></div>
     </div>
   </div>
+
+ <!--- <script>
+    (function() {
+    'use strict';
+    window.addEventListener('load', function() {
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = document.getElementsByClassName('needs-validation');
+      // Loop over them and prevent submission
+      var validation = Array.prototype.filter.call(forms, function(form) {
+        form.addEventListener('submit', function(event) {
+          if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    }, false);
+  })();
+  </script>-->
 
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
