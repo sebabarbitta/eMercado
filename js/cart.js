@@ -11,9 +11,7 @@ var esquina = document.getElementById("Esquina");
 var nro = document.getElementById("Numero");
 var pais  = document.getElementById("Pais");
 
-var enviooo= calle.value + esquina.value + nro.value + pais.value;
-var pago = cardNum.value + cardCVV.value + cardDate.value + cardBanco.value + bankAcc.value + bankNamb.value;
-var todo = enviooo + pago;
+
 var pay = "";
 carrito = {};
 //var subs;
@@ -107,6 +105,16 @@ function totalgeneral(){
 
 }
 
+function borrar(i){
+
+if(carrito.length > i ){
+    carrito.splice(i,0);
+    document.getElementById(`general${i}`).remove();
+    subtotalgeneral()
+    envio()
+}
+}
+
 
 function car(cari){
 
@@ -125,7 +133,7 @@ function car(cari){
         contenido += 
         `
        
-        <div class="list-group-item list-group-item-action" >
+        <div id="general${i}" class="list-group-item list-group-item-action" >
         <img src="` + descrip.src + `"width="100px" height="100px" class="img-productos">
         
                 <div class="col">
@@ -138,6 +146,7 @@ function car(cari){
                     
                     <small class="text-muted"> Costo: `+descrip.currency+'' + descrip.unitCost + ` </small>
                    SubTotal UYU:<span class="subtotales" id="sub${i}"> `+subtotal+` </span>
+                   <small class="text-muted"> <button onclick= borrar(${i}) class="btn btn-info btn-sm" type= "button">Eliminar</button> </small>
                 </div>
                
             </div>
@@ -230,10 +239,7 @@ function validarform(){
 
 
     window.addEventListener('load', function() {
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
         var forms = document.getElementsByClassName('needs-validation');
-        //var form2 = document.getElementsByClassName('needs-validati');
-        // Loop over them and prevent submission
         var validation = Array.prototype.filter.call(forms, function(form) {
           form.addEventListener('submit', function(event) {
             if (form.checkValidity() === false) {
@@ -288,7 +294,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
             subtotalgeneral();
             envio()
             totalgeneral()
-         //   costoenvio()
+        
         }
         
     });
