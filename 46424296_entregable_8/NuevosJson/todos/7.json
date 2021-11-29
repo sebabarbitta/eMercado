@@ -1,0 +1,17 @@
+
+    {    "id" : 7,
+        "name": "Huawei P40",
+        "description": "dispositivo de gama alta que rompe bastante con lo visto en su antecesor, el Huawei P30. Tiene un diseño fiel a las tendencias del mercado",
+        "cost": 290,
+        "currency": "USD",
+        "soldCount": 25,
+        "category": "Celulares",
+        "images":[
+            "img/prod7.jpg",
+            "img/prod7_1.jpg",
+            "img/prod7_2.jfif"
+        ],
+        "relatedProducts":[ 1 , 3]
+                
+    }
+

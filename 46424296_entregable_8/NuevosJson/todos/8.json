@@ -1,0 +1,17 @@
+
+
+{    "id" : 8,
+    "name": "Motorola Moto G20",
+    "description": "la marca acaba de renovar su gama baja con un nuevo teléfono: el Motorola Moto G20. Especificaciones contenidas, potencia algo justa, pantalla de gran diagonal y un diseño bastante atractivo",
+    "cost": 100,
+    "currency": "USD",
+    "soldCount": 7,
+    "category": "Celulares",
+    "images":[
+        "img/prod8.jpg",
+        "img/prod8_1.png",
+        "img/prod8_2.png",
+        "img/prod8_3.jpg"
+    ],
+    "relatedProducts":[ 3 , 5]
+}
